@@ -66,8 +66,9 @@ a_list = [1,3,4,5]
 b_list = [3,4]
 
 c = a_list + b_list
-print(c)
-print(c.remove(3))
+
+print("!!" + str(c[0:6]))
+
 print(c)
 i = 5
 print(c[:i]+c[i+1:])
