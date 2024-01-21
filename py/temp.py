@@ -1,3 +1,10 @@
+q = 1345
+q = str(q)
+q = list(q)
+print(q)
+q = q[::-1]
+print(q)
+
 n ="\n"
 a = "안녕하세여"+n+"d"
 b = "인녕하시렵니까?"+n

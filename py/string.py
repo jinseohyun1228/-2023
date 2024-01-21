@@ -8,11 +8,32 @@ while True:
 
 print(lines)
 
+string01 = "안녕하세요. 저는 진서현입니다."
+string01 = string01.replace(" ","")
 
+print(string01)
 
+string02 = "간장콩장장은 간콩장장?"
+print(string02)
+string02 = string02.replace("장","")
+print(string02)
+
+string03 = "안녕"
+string04 = "안녕"
+
+if string03 == string04:
+    print(string03+ " == " + string04)
 s = "안녕하세요"
 print(len(s))
 
+print(s[::-1])
+
+string05 = "THE SUN SETS"
+string05 = string05.lower()
+print(string05)
+
+string05 = string05.upper()
+print(string05)
 # 문자열 반으로 나누기
 p = [0,1,2,3,4]
 mid = len(p)//2
