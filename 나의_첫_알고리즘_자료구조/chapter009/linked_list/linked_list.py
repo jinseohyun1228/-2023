@@ -2,28 +2,24 @@ class Node:
     def __init__(self,data,next=None):
         self.data = data
         self.next = next
-class LinkedListCycle:
+
+class LinkedList:
     def __init__(self):
         self.head = None
+
     def append(self,data):
         if not self.head:
             self.head = Node(data)
-            self.head.next = self.head
             return
         current = self.head
-        while current.next != self.head:
+        while current.next:
             current = current.next
         current.next = Node(data)
-        current = current.next
-        current.next = self.head
 
     def __str__(self):
         re = ""
         node = self.head
-        if node is not None:
-            re += str(node.data) +" "
-            node = node.next
-        while node is not self.head:
+        while node is not None:
             re += str(node.data) +" "
             node = node.next
         return re
@@ -32,10 +28,7 @@ class LinkedListCycle:
         current = self.head
         if current is None:
             return False
-        if current.data == target:
-            return True
-        current = current.next
-        while current is not self.head:
+        while current is not None:
             if current.data == target:
                 return True
             current = current.next
@@ -43,19 +36,25 @@ class LinkedListCycle:
 
     def removeAll(self,target):
         while self.head.data is target:
-            if self.head.next == self.head:
-                self.head = None
-                return
-            else:
-                self.head = self.head.next
+            self.head = self.head.next
         currnet = self.head.next
         pre = self.head
-        while currnet != self.head:
+        while currnet:
             if currnet.data == target:
                 pre.next = currnet.next
             else:
                 pre = currnet
             currnet = currnet.next
+
+    def reverse_list(self):
+        current = self.head
+        previous = None
+        while current: #지금
+            next = current.next
+            current.next = previous
+            previous = current
+            current = next
+        self.head = previous
 
     def detect_cycle(self):
         slow = self.head
@@ -70,23 +69,28 @@ class LinkedListCycle:
                 return False
 
 
-a_lsit = LinkedListCycle()
-a_lsit.append(3)
-a_lsit.append(3)
-a_lsit.append(1)
-a_lsit.append(2)
-a_lsit.append(3)
-a_lsit.append(3)
+
+a_lsit = LinkedList()
 a_lsit.append(3)
 a_lsit.append(4)
+a_lsit.append(5)
+a_lsit.append(7)
+a_lsit.append(4)
+a_lsit.append(4)
+a_lsit.append(4)
 a_lsit.append(1)
-a_lsit.append(3)
-a_lsit.append(3)
+
+print(a_lsit.serch(8)) #False
+print(a_lsit.serch(4)) #True
 
 print(a_lsit)
-a_lsit.removeAll(3)
+a_lsit.removeAll(4)
 print(a_lsit)
+
+a_lsit.reverse_list()
+
+print(a_lsit)
+
 print(a_lsit.detect_cycle())
 
-for i in range(1,3):
-    print(i)
+

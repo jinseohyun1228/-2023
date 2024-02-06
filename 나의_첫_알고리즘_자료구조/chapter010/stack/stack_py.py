@@ -6,3 +6,5 @@ stack.append(5)
 print(stack.pop())
 print(stack.pop())
 print(stack.pop())
+
+
