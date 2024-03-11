@@ -1,0 +1,25 @@
+value = 60
+
+b1 = bin(value)
+o1 = oct(value)
+h1 = hex(value)
+print('=======================')
+print(b1)
+print(o1)
+print(h1)
+
+b2 = format(value, '#b')
+o2 = format(value, '#o')
+h2 = format(value, '#x')
+print('=======================')
+print(b2)
+print(o2)
+print(h2)
+
+b3 = format(value, 'b')
+o3 = format(value, 'o')
+h3 = format(value, 'x')
+print('=======================')
+print(b3)
+print(o3)
+print(h3)
