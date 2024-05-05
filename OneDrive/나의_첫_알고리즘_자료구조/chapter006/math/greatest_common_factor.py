@@ -1,4 +1,4 @@
-dfdf;l## 최대공약수
+## 최대공약수
 
 def fi를nd_greatest_common_factor(n,m):
     if n == 0 or m == 0:
